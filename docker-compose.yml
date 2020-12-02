@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+    smart-brain-api:
+        container_name: backend
+        build: ./
+        command: npm start
+        working_dir: /usr/src/smart-brain-api
+        environment:
+            POSTGRES_URI: postgres://giri:secret@postgres:5432/facewebapp
+        ports:
+            - "3000:3000"
+        volumes:
+            - /d/UdemyCourses/WebDevelopment/5.Practise/smart-brain-api:/usr/src/smart-brain-api
+
+    #POSTGRESS
+    postgres:
+        build: ./postgres
+        environment:
+            POSTGRES_USER: giri
+            POSTGRES_PASSWORD: secret
+            POSTGRES_DB: facewebapp
+            POSTGRES_HOST: postgres
+        ports:
+            - "5432:5432"
