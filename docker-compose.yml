@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.7'
 
 services:
     smart-brain-api:
@@ -11,7 +11,7 @@ services:
         ports:
             - "3000:3000"
         volumes:
-            - /d/UdemyCourses/WebDevelopment/5.Practise/smart-brain-api:/usr/src/smart-brain-api
+            - .:/usr/src/smart-brain-api
 
     #POSTGRESS
     postgres:

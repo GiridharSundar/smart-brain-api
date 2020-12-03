@@ -32,7 +32,7 @@ app.use(cors())
 app.use(bodyParser.json());
 app.use(morgan('combined'));
 
-console.log("hi, working work now");
+console.log("volumes working");
 
 app.get('/', (req, res)=> { res.send("docker working") })
 app.post('/signin', signin.handleSignin(db, bcrypt))
